@@ -18,7 +18,7 @@ const routes = (app) => {
         res.send('POST request successful!'));
      
    //this route is for put and delete 
-    app.route('/item/:contactID')
+    app.route('/item/:itemID')
         //update item      
         .put((req, res) =>
         res.send('PUT request successful!'))
