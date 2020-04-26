@@ -43,3 +43,12 @@ export const updateItem = (req, res) => {
         res.json(item);
     });
 }
+
+export const deleteItem = (req, res) => {
+    Item.remove({ _id: req.params.itemID }, (err, item) => {
+        if(err) {
+            res.send(err);
+        }
+        res.json({ message: "Item deleted"});
+    });
+}

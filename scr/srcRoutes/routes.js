@@ -1,4 +1,4 @@
-import {addNewItem, getItem, getItemWithID} from '../srcControllers/controller';
+import {addNewItem, getItem, getItemWithID, updateItem, deleteItem} from '../srcControllers/controller';
 
 //create routes for the endpints
 //route function
@@ -12,18 +12,19 @@ const routes = (app) => {
         next();
     }, getItem)
        
-        //post request
+        //post endpoint
         .post(addNewItem);
      
-   //this route is for put and delete 
     app.route('/item/:itemID')
-        .get(getItemWithID)
-        //update item      
-        .put((req, res) =>
-        res.send('PUT request successful!'))
-        //delete item
-        .delete((req, res) =>
-        res.send('DELETE request successful!'));
+        
+         //get a specific item
+        .get(getItemWithID)      
+         
+         //update a specific item
+        .put(updateItem)
+         
+        //delete a specific item
+        .delete(deleteItem);
 }
 
 export default routes;
