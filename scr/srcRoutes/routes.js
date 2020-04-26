@@ -1,3 +1,4 @@
+import {addNewItem, getItem, getItemWithID} from '../srcControllers/controller';
 
 //create routes for the endpints
 //route function
@@ -9,16 +10,14 @@ const routes = (app) => {
         console.log(`Request from: ${req.originalUrl}`)
         console.log(`Request type: ${req.method}`)
         next();
-    }, (req,res, next) => {
-        res.send('GET request successful!');
-    })
+    }, getItem)
        
         //post request
-        .post((req,res) => 
-        res.send('POST request successful!'));
+        .post(addNewItem);
      
    //this route is for put and delete 
     app.route('/item/:itemID')
+        .get(getItemWithID)
         //update item      
         .put((req, res) =>
         res.send('PUT request successful!'))

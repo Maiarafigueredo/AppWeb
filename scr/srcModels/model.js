@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 export const ItemSchema = new Schema({
-    SideDish: {
+    sideDishes: {
         type: String
     },
     braskfast: {
