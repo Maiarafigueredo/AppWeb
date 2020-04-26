@@ -1,23 +1,29 @@
 
-//create routes for the enppints
+//create routes for the endpints
 //route function
 const routes = (app) => {
     app.route('/item')
-        //get request
-        .get((req,res) => 
-        res.send('GET request successful!'))
-        
+        // get request, using next function
+        .get((req,res, next) => {
+        //add middleware
+        console.log(`Request from: ${req.originalUrl}`)
+        console.log(`Request type: ${req.method}`)
+        next();
+    }, (req,res, next) => {
+        res.send('GET request successful!');
+    })
+       
         //post request
         .post((req,res) => 
         res.send('POST request successful!'));
      
    //this route is for put and delete 
-    app.route('/contact/:contactID')
+    app.route('/item/:contactID')
         //update item      
-        .put((req,res) =>
+        .put((req, res) =>
         res.send('PUT request successful!'))
         //delete item
-        .delete((req,res) =>
+        .delete((req, res) =>
         res.send('DELETE request successful!'));
 }
 
