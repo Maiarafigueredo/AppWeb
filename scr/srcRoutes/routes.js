@@ -1,3 +1,8 @@
+// <!-- *   Title: <Building RESTful APIs with node.js and Express>
+// *    Author: Emmanuel Henri>
+// *    Date: <2019>
+// *    Availability: https://www.linkedin.com/learning/building-restful-apis-with-node-js-and-express/building-a-rest-api-with-node-and-express-->
+
 import {addNewItem, getItem, getItemWithID, updateItem, deleteItem} from '../srcControllers/controller';
 
 //create routes for the endpints
