@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import routes from './scr/srcRoutes/routes';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
@@ -6,6 +7,7 @@ import bodyParser from 'body-parser';
 const app = express();
 const PORT = 4000;
 
+app.use(cors());
 
 // mongoose connection
 mongoose.Promise = global.Promise;
